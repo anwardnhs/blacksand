@@ -111,7 +111,7 @@ h3{font-size:29px}
 .governance-statement p{font-size:23px}.governance-rows>div{display:grid;grid-template-columns:1.1fr 1fr;gap:100px;padding:40px 0;border-top:1px solid var(--line)}
 .governance-rows h2{font-size:40px}.governance-rows p{font-size:19px}
 .history-start{display:block;font-family:var(--serif);font-size:140px;line-height:1;margin-bottom:35px}
-.history-layout aside>.photo{height:400px;max-width:300px}
+
 .timeline-item{grid-template-columns:100px 1fr;gap:35px;padding-block:35px}.timeline-item>span{font-size:40px}
 .timeline-item h2{font-size:30px;letter-spacing:-.035em}.timeline-item p{font-size:18px;margin-top:15px}
 .business-chapters{margin:0 28px}
@@ -262,7 +262,7 @@ th,td{font-size:18px;padding:26px 20px}thead th{font-size:15px}
  .profile-copy{padding:32px 25px}.profile-copy h2{font-size:33px}.profile-copy>p{font-size:18px}
  .governance-statement{display:block;padding-block:35px 60px}.governance-statement h2{font-size:43px;margin-bottom:25px}.governance-statement p{font-size:20px}
  .governance-rows>div{display:block;padding-block:28px}.governance-rows h2{font-size:33px;margin-bottom:20px}.governance-rows p{font-size:18px}
- .history-start{font-size:100px}.history-layout aside>.photo{height:300px;max-width:none}
+ .history-start{font-size:100px}
  .timeline-item{grid-template-columns:75px 1fr;gap:20px}.timeline-item>span{font-size:30px}.timeline-item h2{font-size:26px}.timeline-item p{font-size:17px}
  .business-chapters{margin-inline:0}.business-chapter,.business-chapter:nth-child(even){display:flex;flex-direction:column;min-height:0}
  .business-chapter:nth-child(even)>.photo{order:0}.business-chapter>.photo{min-height:0;height:400px;width:100%}

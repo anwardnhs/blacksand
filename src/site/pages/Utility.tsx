@@ -24,9 +24,30 @@ export function Credits() {
  return <><PageIntro label="Image credits" title="Photography." text="Photography brings context to our story. Images are illustrative and do not identify specific Blacksand assets or employees." /><section className="section container credits-grid">{Object.entries(photos).map(([name,p])=><div key={name}><Photo name={name as keyof typeof photos}/><h2>{p.credit}</h2><p>{p.alt}</p><a href={p.source} target="_blank" rel="noreferrer" className="text-link">View on Unsplash <ArrowUpRight size={16}/></a></div>)}</section></>;
 }
 const policies = {
- privacy:{label:'Privacy',title:'Your information. Your choice.',intro:'How this website currently handles information.',sections:[['Contact enquiries','The contact form prepares an email draft in your browser. It does not submit your details to a website server. You choose whether to send the message through your email application. Information included in an email is then handled by your email provider and the recipient.'],['Session storage','The website stores a session flag to avoid repeating the introductory animation during the same browsing session. Site search and content filters operate in your browser.'],['External services','Some photography is served by Unsplash and typography may be loaded from Google Fonts. Requests to those services can include technical connection information such as your IP address. No analytics or advertising trackers have been added to this version of the website.'],['Questions','For questions about information handling, contact info@blacksand.com. This website notice describes the current preview; an approved corporate privacy policy should be reviewed before public launch.']]},
+ privacy:{label:'Privacy',title:'Your information. Your choice.',intro:'How this website currently handles information.',sections:[['Contact enquiries','The contact form prepares an email draft in your browser. It does not submit your details to a website server. You choose whether to send the message through your email application. Information included in an email is then handled by your email provider and the recipient.'],['Cookies and browser storage','A first-party cookie remembers your preferences for up to 180 days. A separate session storage flag prevents the welcome animation from repeating during your browser session.'],['External services','If you enable external fonts, the site loads typefaces from Google Fonts. These requests share your IP address with Google. Image credits link to Unsplash. This version of the site uses no analytics or advertising trackers.'],['Questions','For questions about information handling, contact info@blacksand.com. This website notice describes the current preview; an approved corporate privacy policy should be reviewed before public launch.']]},
  terms:{label:'Terms of use',title:'A clear understanding.',intro:'About the information presented on this website.',sections:[['Website information','The website introduces the business using the supplied Blacksand project material. Historical figures are identified by period where available. They should be confirmed against approved company publications before being relied upon.'],['Financial information','Financial highlights are informational and do not constitute investment advice or an offer to buy or sell securities. No live market feed is connected to this website.'],['Photography & external links','Photographs are illustrative. External sources operate under their own terms. The website credits photography where source information is available.'],['Publication status','These are preview website notices, pending approved corporate legal wording before public launch.']]},
  accessibility:{label:'Accessibility',title:'A website for more people.',intro:'We aim to make our information easier to find, understand and use.',sections:[['Navigation & keyboard use','A skip link takes you directly to the main content. Navigation, search, filters and expandable sections can be operated with a keyboard, with visible focus indicators.'],['Reading & display','Layouts adapt to smaller screens and text can be enlarged with browser controls. Tables can be scrolled horizontally when space is limited.'],['Motion preferences','The introductory animation is skipped when your device requests reduced motion. Decorative movement and transition effects are also reduced.'],['Report a barrier','If a feature makes it difficult to access information, contact info@blacksand.com and include the page, your browser and the issue you encountered. This version has not yet undergone an independent accessibility audit.']]},
 };
-export function Policy({kind}:{kind:keyof typeof policies}) {const p=policies[kind];return <><PageIntro label={p.label} title={p.title} text={p.intro}/><section className="section container policy-layout"><div className="prose">{p.sections.map(([title,text])=><section key={title}><h2>{title}</h2><p>{text}</p></section>)}</div></section></>;}
+export function Policy({ kind, onOpenCookieSettings }: {
+  kind: keyof typeof policies;
+  onOpenCookieSettings?: () => void;
+}) {
+  const policy = policies[kind];
+  return <>
+    <PageIntro label={policy.label} title={policy.title} text={policy.intro} />
+    <section className="section container policy-layout">
+      <div className="prose">
+        {policy.sections.map(([title, text]) => {
+          const isCookieSection = kind === 'privacy' && title === 'Cookies and browser storage';
+          return <section key={title} id={isCookieSection ? 'cookies' : undefined}>
+            <h2>{title}</h2>
+            <p>{text}</p>
+            {isCookieSection && <button type="button" className="text-link" aria-haspopup="dialog"
+              aria-controls="cookie-settings" onClick={onOpenCookieSettings}>Open cookie settings</button>}
+          </section>;
+        })}
+      </div>
+    </section>
+  </>;
+}
 export function NotFound() {return <><PageIntro label="404 / Page not found" title={<>A different<br /><em>direction.</em></>} text="We couldn’t find that page. Let’s get you back to a familiar place."/><section className="container not-found"><ButtonLink to="/">Back to home</ButtonLink><TextLink to="/sitemap">Explore the sitemap</TextLink></section></>;}

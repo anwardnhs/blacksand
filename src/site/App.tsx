@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { MotionConfig } from 'framer-motion';
 import { Header, Footer, Intro, RouteEffects } from './components/Shell';
 import { SEO } from './components/SEO';
+import { CookieConsent } from './components/CookieConsent';
 import Home from './pages/Home';
 import { Company, Leadership, Governance, History, Founder, GlobalPresence } from './pages/Company';
 import { Businesses, BusinessDetail } from './pages/Businesses';
@@ -12,7 +14,11 @@ import { Contact, Careers, Sitemap, Credits, Policy, NotFound } from './pages/Ut
 
 export function Site() {
  const location=useLocation();
- return <><SEO /><RouteEffects /><a className="skip-link" href="#main-content">Skip to content</a><Header /><Intro /><main id="main-content" tabIndex={-1} key={location.pathname}>
+ const [cookieSettingsOpen, setCookieSettingsOpen] = useState(false);
+ const openCookieSettings = () => setCookieSettingsOpen(true);
+ return <><SEO /><RouteEffects /><a className="skip-link" href="#main-content">Skip to content</a><Header /><Intro />
+ <CookieConsent settingsOpen={cookieSettingsOpen} onOpenSettings={openCookieSettings} onCloseSettings={() => setCookieSettingsOpen(false)} />
+ <main id="main-content" tabIndex={-1} key={location.pathname}>
   <Routes>
    <Route path="/" element={<Home />} />
    <Route path="/company" element={<Company />} />
@@ -34,7 +40,7 @@ export function Site() {
    <Route path="/careers" element={<Careers />} />
    <Route path="/sitemap" element={<Sitemap />} />
    <Route path="/credits" element={<Credits />} />
-   <Route path="/privacy" element={<Policy kind="privacy" />} />
+   <Route path="/privacy" element={<Policy kind="privacy" onOpenCookieSettings={openCookieSettings} />} />
    <Route path="/terms" element={<Policy kind="terms" />} />
    <Route path="/accessibility" element={<Policy kind="accessibility" />} />
    <Route path="/about" element={<Navigate to="/company" replace />} />
@@ -45,6 +51,6 @@ export function Site() {
    <Route path="/global-presence" element={<Navigate to="/company/global-presence" replace />} />
    <Route path="*" element={<NotFound />} />
   </Routes>
- </main><Footer /></>;
+ </main><Footer onOpenCookieSettings={openCookieSettings} /></>;
 }
 export default function App(){return <MotionConfig reducedMotion="user"><BrowserRouter><Site /></BrowserRouter></MotionConfig>;}
