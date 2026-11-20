@@ -1,0 +1,173 @@
+{
+  "board": [
+    {
+      "name": "Anwar Alhassan",
+      "title": "Non-Executive Chairman",
+      "type": "Non-Independent"
+    },
+    {
+      "name": "Samuel Esenbhalu",
+      "title": "Group CEO & Executive Director",
+      "type": "Executive"
+    },
+    {
+      "name": "Femi Ayodeji",
+      "title": "Group CFO & Executive Director",
+      "type": "Executive"
+    },
+    {
+      "name": "Dr. Zainab Audu-Nunghe",
+      "title": "Lead Independent Director",
+      "type": "Independent"
+    },
+    {
+      "name": "Chief Akintiola Adetokunbo, OFR",
+      "title": "Independent Director (Governance)",
+      "type": "Independent"
+    },
+    {
+      "name": "Sir Harry Johnson",
+      "title": "Independent Director (Finance & Audit)",
+      "type": "Independent"
+    },
+    {
+      "name": "Dr. Catherine Cole",
+      "title": "Independent Director (HSE & ESG)",
+      "type": "Independent"
+    },
+    {
+      "name": "Professor Effiong Bassey",
+      "title": "Independent Director",
+      "type": "Independent"
+    },
+    {
+      "name": "Dame Patricia Okoro",
+      "title": "Independent Director",
+      "type": "Independent"
+    },
+    {
+      "name": "Sheikh Khalid Bin Rashid Al-Thani II",
+      "title": "Non-Executive Director (QIA)",
+      "type": "Non-Independent"
+    },
+    {
+      "name": "Mrs. Fatima Bello-Gwarzo",
+      "title": "Non-Executive Director",
+      "type": "Non-Independent"
+    }
+  ],
+  "executives": [
+    {
+      "name": "Samuel Esenbhalu",
+      "title": "Group Chief Executive Officer"
+    },
+    {
+      "name": "Engr. Abdullahi Inuwa",
+      "title": "Group Chief Operating Officer"
+    },
+    {
+      "name": "Femi Ayodeji",
+      "title": "Group Chief Financial Officer"
+    },
+    {
+      "name": "James K. Roberts",
+      "title": "Chief Strategy Officer (CSO)"
+    },
+    {
+      "name": "Amina Diop",
+      "title": "General Counsel & Corporate Secretary"
+    },
+    {
+      "name": "Dr. Ibrahim Bature",
+      "title": "EVP, Upstream"
+    },
+    {
+      "name": "Engr. Michael Okafor",
+      "title": "EVP, Downstream & Refining"
+    },
+    {
+      "name": "Mr. Emeka C. Nwokolo",
+      "title": "EVP, Gas & Power"
+    },
+    {
+      "name": "Aliyu Sani-Bako",
+      "title": "EVP, Trading & Supply"
+    },
+    {
+      "name": "Ms. Jennifer Nwana",
+      "title": "EVP, New Energy"
+    }
+  ],
+  "milestones": [
+    {
+      "year": "1952",
+      "title": "Pioneer Era Begins",
+      "description": "Blacksand Oil Company Limited founded by Alhaji Ibrahim Alhassan CFR in Kano."
+    },
+    {
+      "year": "1978",
+      "title": "First Upstream Asset",
+      "description": "Acquired first indigenous onshore exploration license (OML) in the Niger Delta Basin."
+    },
+    {
+      "year": "1982",
+      "title": "Domestic Infrastructure",
+      "description": "Completed construction of a major national Storage and Product Depot in Kaduna."
+    },
+    {
+      "year": "1991",
+      "title": "Expansion Era & Landmark IPO",
+      "description": "Abdallah Alhassan appointed GCEO. Blacksand Oil Company Plc. lists on the Nigerian Stock Exchange."
+    },
+    {
+      "year": "1995",
+      "title": "Offshore Entry",
+      "description": "Entered offshore drilling operations and made the first oil discovery in the Okiri Deep Field."
+    },
+    {
+      "year": "2004",
+      "title": "Trading & Midstream",
+      "description": "Established Blacksand Global Trading FZE in Dubai and Blacksand LNG Ltd."
+    },
+    {
+      "year": "2005",
+      "title": "Downstream Flagship",
+      "description": "Commissioning of the first phase of the Blacksand Petrochemical Complex in Port Harcourt."
+    },
+    {
+      "year": "2007",
+      "title": "Leadership Transition",
+      "description": "Samuel Esenbhalu appointed GCEO; Abdallah Alhassan becomes Non-Executive Chairman."
+    },
+    {
+      "year": "2012",
+      "title": "International Upstream M&A",
+      "description": "Acquired 51% controlling interest in Azura E&P Angola Ltd. for $3.5 billion."
+    },
+    {
+      "year": "2017",
+      "title": "Middle East Expansion",
+      "description": "Completed $6 billion greenfield Blacksand Fujairah Refining & Petrochemicals facility."
+    },
+    {
+      "year": "2019",
+      "title": "Corporate Rebranding",
+      "description": "Name officially changed to Blacksand Plc., reflecting its multinational holding structure."
+    },
+    {
+      "year": "2020",
+      "title": "Globalization Era",
+      "description": "Anwar Alhassan appointed Chairman. Company successfully navigated COVID-19."
+    },
+    {
+      "year": "2023",
+      "title": "Global Listing & Gas Expansion",
+      "description": "Achieved landmark secondary listing on the London Stock Exchange (LSE: BLSD). Acquired 60% stake in WestGas Infrastructure Ghana Ltd."
+    },
+    {
+      "year": "2024",
+      "title": "Logistics Alliance",
+      "description": "Finalized the 45% strategic alliance with Helios Marine Logistics B.V."
+    }
+  ]
+}
