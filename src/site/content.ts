@@ -44,7 +44,28 @@ export const businesses: { slug: string; number: string; name: string; short: st
 
 export const board = original.board;
 export const executives = original.executives;
-export const milestones = original.milestones.filter(item => item.year !== '2023').concat([{year:'2023',title:'Gas infrastructure expansion',description:'Acquired a 60% interest in WestGas Infrastructure Ghana Ltd.'}]).sort((a,b)=> Number(a.year)-Number(b.year));
+const milestoneDetails: Record<string, typeof original.milestones> = {
+  '1952': [
+    { year: '1952', title: 'Founded in Kano', description: 'Alhaji Ibrahim Alhassan CFR founded Blacksand Oil Company Limited, starting in petroleum distribution.' },
+  ],
+  '1991': [
+    { year: '1991', title: 'Leadership under Abdallah Alhassan', description: 'Abdallah Alhassan was appointed group chief executive.' },
+    { year: '1991', title: 'Nigerian Stock Exchange listing', description: 'Blacksand Oil Company Plc listed on the Nigerian Stock Exchange.' },
+  ],
+  '2004': [
+    { year: '2004', title: 'Trading opens in Dubai', description: 'Blacksand established Blacksand Global Trading FZE in Dubai.' },
+    { year: '2004', title: 'Blacksand LNG established', description: 'The group formed Blacksand LNG Ltd. as its gas and LNG business.' },
+  ],
+  '2020': [
+    { year: '2020', title: 'Anwar Alhassan becomes chairman', description: 'Anwar Alhassan was appointed chairman in the year the group navigated the COVID-19 pandemic.' },
+  ],
+  '2023': [
+    { year: '2023', title: 'Gas infrastructure expansion', description: 'Blacksand acquired a 60% interest in WestGas Infrastructure Ghana Ltd.' },
+  ],
+};
+export const milestones = original.milestones
+  .flatMap(item => milestoneDetails[item.year] ?? [item])
+  .sort((a, b) => Number(a.year) - Number(b.year));
 export const regions = [
   { name:'Africa', headline:'Our roots. Our largest operating footprint.', offices:[['Abuja, Nigeria','Corporate headquarters'],['Lagos, Nigeria','Operations headquarters'],['Port Harcourt, Nigeria','Refining & petrochemicals'],['Johannesburg, South Africa','Regional office']], text:'Production, refining and gas infrastructure across Nigeria, Angola, Egypt, Ghana and Morocco.', countries:'Nigeria · Angola · Egypt · Ghana · Morocco · South Africa' },
   { name:'Middle East', headline:'A connected refining and trading platform.', offices:[['Dubai, UAE','Trading & investments'],['Fujairah, UAE','Refining complex'],['Oman','Gas condensate joint venture']], text:'Refining and commercial capabilities linking regional supply with international markets.', countries:'United Arab Emirates · Oman' },
